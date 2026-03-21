@@ -4,17 +4,20 @@ class Solution {
         int m = arr.length;
         int n = arr[0].length;
         
-        int i=0;
-        int j= n-1;
+        int low=0;
+        int high = m*n-1;
         
-        while( i < m && j >=0){
-            if(arr[i][j] == target){
+        while(low<= high){
+            int mid = (low+ high)/2;
+            int row = mid/n;
+            int col = mid %n;
+            if(arr[row][col] == target){
                 return true;
             }
-            else if(arr[i][j] < target){
-                i++;
+            else if(arr[row][col] < target){
+                low++;
             }else{
-                j--;
+                high--;
             }
         }
         return false;
