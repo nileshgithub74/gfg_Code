@@ -1,0 +1,13 @@
+class Solution {
+    int lowerBound(int[] arr, int target) {
+        // code here
+         int n = arr.length;
+        for(int i =0; i< arr.length; i++){
+            if(arr[i] >= target){
+                return i;
+            }
+        }
+        return n;
+        
+    }
+}
